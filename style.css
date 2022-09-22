@@ -112,9 +112,41 @@ h3 {
   float: right;
 }
 
-.w-nav-link.w--current {
-  color: #0082f3;
+.w-nav-menu-mobile {
+  display: none;
 }
+
+
+.w-nav-menu-mobile.active {
+  flex-direction: column;
+  position: absolute;
+  
+  top: 115%;
+
+  width: 100vw;
+
+  background-color: gainsboro;
+
+  transition: 0.4s ease-in;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(108px);
+}
+
+/* .w-nav-menu-mobile.active {
+  flex-direction: column;
+  position: absolute;
+  top: 115%;
+  width: 100vw;
+  background-color: gainsboro;
+  transition: 0.4s ease-in;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(108px);
+} */
+
+
+
 
 .nav-link {
   font-family: Roboto, sans-serif;
@@ -132,6 +164,23 @@ h3 {
   text-align: left;
   margin-left: auto;
   margin-right: auto;
+}
+
+.myStuff{
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  text-decoration: none;
+  padding: 20px;
+ 
+}
+
+.myStuff.active{
+  margin:0
+}
+
+.w-nav-link.active {
+  margin: 0;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
@@ -327,6 +376,7 @@ img[Attributes Style] {
 
   .collection-list-wrapper {
     margin-top: 70px;
+    
   }
 
   div {
@@ -1026,10 +1076,6 @@ img {
   padding: 30px 30px;
 }
 
-.w-nav[data-collapse="medium"] .w-nav-menu {
-  display: none;
-}
-
 .w-nav[data-collapse="medium"] .w-nav-button {
   display: block;
 }
@@ -1129,6 +1175,11 @@ img {
   grid-template-rows: auto auto;
 }
 
+.cards-of-projects{
+  grid-template-columns: 1fr 1fr;
+}
+
+
 .section.testimonial {
   height: 500px;
   margin-top: 60px;
@@ -1185,28 +1236,35 @@ img {
 
 .hamburger{
   display: block;
-  float: right;
   margin-right: 50px;
-  padding-top: 0px;
-  margin-top: 0px;
+  cursor: pointer;
 }
 
 .bar{
-  display: block;
+  display: inherit;
   width: 25px;
   height: 3px;
   margin: 5px auto;
-  -webkit-transition: all 0.3s ease-in-out;
   background-color: black;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out; 
 }
 
+/* animacion para invertir las barras de los spans en el index.html mediante la prop "transform" */
+
+.hamburger.active .bar:nth-child(1){
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(3){
+  transform: translateY(-8px) rotate(-45deg);
+}
+.hamburger.active .bar:nth-child(2){
+  opacity: 0;
 }
 
-
-
-
-
-
+.w-nav-menu {
+  display: none;
+}
 
 
 

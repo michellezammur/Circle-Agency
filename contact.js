@@ -1,4 +1,4 @@
-// document.querySelector("#w-node").addEventListener("submit", addPost);
+document.querySelector("#email-form").addEventListener("submit", addPost);
 
 const url = "https://jsonplaceholder.typicode.com/comments";
 
@@ -6,14 +6,14 @@ function addPost(preventForm) {
   preventForm.preventDefault();
 
   let name = document.querySelector("#name").value;
-  let email = document.querySelector("#email-form").value;
+  let email = document.querySelector("#name-2").value;
   let phone = document.querySelector("#name-3").value;
   let message = document.querySelector("#field").value;
 
   fetch(url, {
     method: "POST",
     headers: {
-      "Content-type": "application/json",
+      "Content-type": "application/json", 
       Accept: "application/json, text/plain",
     },
     body: JSON.stringify({
@@ -24,7 +24,8 @@ function addPost(preventForm) {
     }),
   })
     .then((response) => response.json())
-    .then((dataForm) => console.log(dataForm))
+    .then((formulario) => 
+      console.log(formulario))
     .then(() => {
       let message = "";
       message += `
@@ -43,7 +44,7 @@ function addPost(preventForm) {
     });
 
   document.querySelector("#name").value = "";
-  document.querySelector("#email-form").value = "";
+  document.querySelector("#name-2").value = "";
   document.querySelector("#name-3").value = "";
   document.querySelector("#field").value = "";
 }
